@@ -5,28 +5,15 @@ import "./Header.scss";
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // on menu click adds nav
-  const handleMenuShow = () => {
-    setIsScrolled(!isScrolled);
-  };
-
   // hides header on down scroll and shows on up scroll
   useEffect(() => {
-    let prevScrollPos = window.pageYOffset;
+    let prevScrollPos = window.scrollY;
 
     const handleScroll = () => {
-      const currentScrollPos = window.pageYOffset;
+      const currentScrollPos = window.scrollY;
       const isScrolledUp = prevScrollPos < currentScrollPos;
       setIsScrolled(isScrolledUp);
       prevScrollPos = currentScrollPos;
-
-      const header = document.querySelector("header");
-
-      if (isScrolledUp) {
-        header?.classList.add("scrolled");
-      } else {
-        header?.classList.remove("scrolled");
-      }
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -36,15 +23,12 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="header">
-      <nav className={`header__nav ${isScrolled ? "show" : ""}`}>
+    <div className={`header ${isScrolled ? "" : "show"}`}>
+      <nav className={`header__nav `}>
         <a href="#home">Home</a>
         <a href="#gallery">Gallery</a>
         <a href="#contacts">Contact Us</a>
       </nav>
-      <button className="header__btn" onClick={handleMenuShow}>
-        menu
-      </button>
     </div>
   );
 };

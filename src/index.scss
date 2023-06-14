@@ -27,10 +27,10 @@ a {
   font-family: Hind, sans-serif;
   font-size: calc(20px + (24 - 20) * ((100vw - 375px) / (1920 - 375)));
   font-weight: 500;
-  color: rgb(190, 190, 190);
+  color: rgb(210, 210, 210);
   &:hover {
     color: rgb(230, 230, 230);
-  } 
+  }
 }
 
 ul,
@@ -59,17 +59,27 @@ button {
 }
 
 ::-webkit-scrollbar {
-  width: 4px;
+  width: 2px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #dfdfdfc9;
+  background: #353535;
 }
 
-// Media queries
+.app{
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1920px;
+}
+
 //doesn't let font sizes grow in more than 1920px screen sizes
 @media (min-width: 1920px) {
   button {
     font-size: 20px;
+  }
+  a {
+    font-size: 24px;
   }
 }
