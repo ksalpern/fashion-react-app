@@ -25,9 +25,9 @@ const Header = () => {
   return (
     <div className={`header ${isScrolled ? "" : "show"}`}>
       <nav className={`header__nav `}>
-        <a href="#home">Home</a>
         <a href="#gallery">Gallery</a>
-        <a href="#contacts">Contact Us</a>
+        <a href="#about">About Us</a>
+        <a href="#contacts">Contact</a>
       </nav>
     </div>
   );
