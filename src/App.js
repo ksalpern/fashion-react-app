@@ -10,7 +10,7 @@ export default function App() {
   return (
     <div className="app">
       <Canvas camera={{ position: [0, 0, 20], fov: 15 }}>
-        <ScrollControls damping={0.2} pages={3} distance={0.5}>
+        <ScrollControls damping={0.2} pages={4} distance={0.5}>
           <Lens>
             <Scroll>
               <Typography />
