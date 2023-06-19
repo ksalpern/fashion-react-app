@@ -1,6 +1,6 @@
 .header {
   position: fixed;
-  top: -50%;
+  top: 0%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 3;
@@ -8,17 +8,17 @@
   width: 100%;
   margin: 0 auto;
   display: flex;
-  flex-direction: column;
+  // flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 5px;
-  padding: 15px 0;
-  background-color: rgba(25, 25, 25, 0.15);
+  padding: 15px;
+  background-color: rgba(25, 25, 25, 0.8);
   transition: all 0.3s ease-in-out;
 
   @media (min-width: 768px) {
     gap: 15px;
-    padding: 20px 0;
+    padding: 20px;
   }
 
   &__nav {
@@ -30,8 +30,9 @@
       gap: 25px;
     }
   }
-}
-.show {
-  top: 0;
-  transition: all 0.4s ease-in-out;
+
+  &__links{
+    display: flex;
+    gap: 15px;
+  }
 }

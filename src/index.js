@@ -15,7 +15,7 @@ root.render(
 
     {/* </Suspense> */}
     {/* <Banner /> */}
-    {/* <Header/> */}
+    <Header/>
     <Routes>
       <Route path="/" element={<App />} />
       <Route path="/gallery" element={<Slider />} />
