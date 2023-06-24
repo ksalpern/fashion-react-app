@@ -1,4 +1,5 @@
 import * as THREE from "three";
+import { Suspense } from "react";
 import { useRef, useState } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Image, ScrollControls, Scroll, useScroll } from "@react-three/drei";
@@ -141,12 +142,14 @@ function Items({ w = 0.7, gap = 0.15 }) {
 
 export const Slider = () => (
   <div className="app">
-    <Canvas
-      gl={{ antialias: false }}
-      dpr={[1, 1.5]}
-      onPointerMissed={() => (state.clicked = null)}
-    >
-      <Items />
-    </Canvas>
+    <Suspense fallback={null}>
+      <Canvas
+        gl={{ antialias: false }}
+        dpr={[1, 1.5]}
+        onPointerMissed={() => (state.clicked = null)}
+      >
+        <Items />
+      </Canvas>
+    </Suspense>
   </div>
 );

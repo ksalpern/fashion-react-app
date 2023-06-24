@@ -30,12 +30,6 @@ function Typography() {
         fontSize={fontSize}
         {...sharedProps}
       />
-      <Text
-        children="fashion"
-        position={[0, -height * 4.624, 12]}
-        fontSize={fontSize}
-        {...sharedProps}
-      />
     </>
   );
 }
